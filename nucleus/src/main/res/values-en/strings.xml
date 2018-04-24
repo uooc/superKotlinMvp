@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nucleus_network_retry_tip">Please check whether the network is connected</string>
+    <string name="nucleus_network_mobile_tip">Please note that you are using a mobile network now</string>
+    <string name="nucleus_error_gif">x or y bound size should be at least %1$dpx and file size should be no more than %2$sM</string>
+    <string name="nucleus_check_permission">Check Permission please</string>
+    <string name="nucleus_dialog_normal_title">Prompt</string>
+    <string name="nucleus_empty_view_title">No Results Found</string>
+    <string name="nucleus_error_view_title">Whoops! Something went wrong</string>
+    <string name="nucleus_error_view_btn">Retry</string>
+    <string name="nucleus_loading">loading</string>
+    <string name="nucleus_permission_request_error">permission request fail</string>
+    //网络解析
+    <string name="nucleus_network_netWork">Network connection failed</string>
+    <string name="nucleus_network_internal">Program internal error</string>
+    <string name="nucleus_network_server">Server error</string>
+    <string name="nucleus_network_unKnow">Unknown error</string>
+</resources>

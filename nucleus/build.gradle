@@ -1,0 +1,105 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion "$maxSdk_version".toInteger()
+    buildToolsVersion "$buildTools_version".toString()
+
+    defaultConfig {
+        minSdkVersion "$minSdk_version".toInteger()
+        targetSdkVersion "$maxSdk_version".toInteger()
+    }
+
+    resourcePrefix "nucleus_"
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    kapt "com.android.databinding:compiler:$android_plugin_version"
+    //support
+    compile "com.android.support:design:$support_version"
+    compile "com.android.support:support-v4:$support_version"
+    compile "com.android.support:cardview-v7:$support_version"
+    compile "com.android.support:appcompat-v7:$support_version"
+    compile "com.android.support:recyclerview-v7:$support_version"
+    compile "com.android.support:support-annotations:$support_version"
+    compile "com.android.support:support-core-utils:$support_version"
+    compile "com.android.support:percent:$support_version"
+    compile "com.android.support.constraint:constraint-layout:$constraint_version"
+    compile 'com.google.android:flexbox:0.3.0'
+    compile rootProject.ext.muldex_version
+    //kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.anko:anko-commons:$anko_version"
+    compile "org.jetbrains.anko:anko-sdk25:$anko_version"
+    compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+    compile "org.jetbrains.anko:anko-support-v4:$anko_version"
+    //retrofit & okHttp
+    compile "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    compile "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    compile "com.squareup.okhttp3:okhttp:$okHttp_version"
+    compile 'com.ricky:retrofitExceptionDispatcher:0.6'
+    compile ('com.squareup.retrofit2:converter-simplexml:2.3.0'){
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+    //rx
+    compile "io.reactivex.rxjava2:rxjava:$rxJava_version"
+    compile "io.reactivex.rxjava2:rxkotlin:$rxKotlin_version"
+    compile "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
+    compile "com.trello.rxlifecycle2:rxlifecycle:$rxLifecycle_version"
+    compile "com.trello.rxlifecycle2:rxlifecycle-android:$rxLifecycle_version"
+    compile "com.trello.rxlifecycle2:rxlifecycle-components:$rxLifecycle_version"
+    compile "com.trello.rxlifecycle2:rxlifecycle-kotlin:$rxLifecycle_version"
+    compile "com.github.VictorAlbertos.RxCache:runtime:$rxCache_version"
+    compile "com.github.VictorAlbertos.Jolyglot:gson:$rxCache_Gson_version"
+    compile "com.jakewharton.rxbinding2:rxbinding:$rxBinding_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxBinding_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rxBinding_version"
+    compile "com.github.pwittchen:reactivenetwork-rx2:$rxNetwork_version"
+    compile "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermission_version"
+    compile "zlc.season:rxdownload3:$rxDownload_version"
+    //utils
+    //[ui---]
+    compile 'com.qmuiteam:qmui:1.0.6'//常见控件，https://github.com/QMUI/QMUI_Android
+    compile 'com.zhihu.android:matisse:0.5.0-beta3'//图片拍照及选择：https://github.com/zhihu/Matisse
+    compile 'com.github.Hitomis.transferee:Transferee:v1.1.0'//图片查看：https://github.com/Hitomis/transferee
+    compile 'com.github.Hitomis.transferee:GlideLoader:v1.1.0'
+    compile 'com.bm.photoview:library:1.4.1'
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'//众多tab：https://github.com/H07000223/FlycoTabLayout
+    compile 'com.daimajia.numberprogressbar:library:1.4@aar'//进度条：https://github.com/daimajia/NumberProgressBar
+    compile 'com.gordonwong:material-sheet-fab:1.2.1'//fab 菜单：https://github.com/gowong/material-sheet-fab
+    compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'//背景drawable文件替代：https://github.com/H07000223/FlycoRoundView
+    compile 'com.github.chenBingX:SuperTextView:v1.4'//对FlycoRoundView_Lib的补充，写渐变背景用：https://github.com/chenBingX/SuperTextView
+    compile 'com.github.lygttpod:SuperTextView:2.1.6'//设置界面textView快速设置：https://github.com/lygttpod/SuperTextView
+    compile 'com.contrarywind:Android-PickerView:3.2.6'//滚轮选中：https://github.com/Bigkoo/Android-PickerView
+    compile 'jp.wasabeef:picasso-transformations:2.1.2'//picasso transformations :https://github.com/wasabeef/picasso-transformations
+    //[工具---]
+    compile 'top.zibin:Luban:1.1.3'//图片压缩：https://github.com/Curzibn/Luban
+    compile 'org.greenrobot:eventbus:3.1.0'
+    compile 'io.paperdb:paperdb:2.6'//简易数据存储：https://github.com/pilgr/Paper
+    compile 'com.blankj:utilcode:1.13.10'//常用工具类：https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
+    compile 'com.squareup.picasso:picasso:2.5.2'//图片加载：https://github.com/square/picasso
+    compile 'com.github.Kennyc1012:MultiStateView:1.3.2'//视图状态切换：https://github.com/Kennyc1012/MultiStateView
+    compile 'com.just.agentweb:agentweb:3.0.0'//webView：https://github.com/Justson/AgentWeb
+    compile('com.ricky:refreshLayout:0.4.2')//下拉刷新：//https://github.com/vihuela/RefreshLayout
+    compile('com.ricky:mvpro-kotlin:1.3.4', { exclude group: 'com.trello.rxlifecycle2' })//底层mvp类库：//https://github.com/vihuela/Kotlin-mvpro
+    compile 'com.shuyu:gsyVideoPlayer-java:3.0.0'//ijk java部分 :https://github.com/CarGuo/GSYVideoPlayer
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-4'//包裹所有页面的刷新：https://github.com/scwang90/SmartRefreshLayout
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-4'
+    compile 'com.github.florent37:camerafragment:1.0.7'//自定义相机 ：https://github.com/florent37/CameraFragment
+    compile 'com.github.florent37:expectanim:1.0.7'//灵巧的View 动画：https://github.com/florent37/ExpectAnim
+    compile 'com.github.yyued:SVGAPlayer-Android:2.0.3'//aSvg:https://github.com/yyued/SVGAPlayer-Android
+    compile "com.mcxiaoke.packer-ng:helper:$ng_packer_version"//打包https://github.com/mcxiaoke/packer-ng-plugin
+    compile "com.billy.android:cc:0.5.0"//组件化，https://github.com/luckybilly/CC
+    //sdk
+    compile 'com.umeng.analytics:analytics:latest.integration'//友盟分析
+}

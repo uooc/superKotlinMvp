@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="uooconline.com.teacher.request.model.TextItem" />
+    </data>
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp"
+        app:rv_backgroundPressColor="?attr/qmui_config_color_pressed"
+        app:rv_isRippleEnable="false">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.title}"
+            android:padding="10dp"
+            android:singleLine="true"
+            tools:text="abc" />
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:text="@{item.body}"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:singleLine="true"
+            tools:text="abc" />
+    </com.flyco.roundview.RoundLinearLayout>
+</layout>

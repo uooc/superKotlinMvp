@@ -1,0 +1,38 @@
+apply from: '../cc.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion "$maxSdk_version".toInteger()
+    buildToolsVersion "$buildTools_version".toString()
+
+    defaultConfig {
+        minSdkVersion "$minSdk_version".toInteger()
+        targetSdkVersion "$maxSdk_version".toInteger()
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    resourcePrefix "meizi_"
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    kapt "com.android.databinding:compiler:$android_plugin_version"
+    //resource
+    compile project(':nucleus')
+
+}

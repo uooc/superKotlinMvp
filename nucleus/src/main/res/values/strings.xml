@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nucleus_network_retry_tip">请检查网络是否连接</string>
+    <string name="nucleus_network_mobile_tip">请注意，您现在使用的是移动网络</string>
+    <string name="nucleus_error_gif">尺寸应该至少为%1$dpx同时文件大小不应该超过%2$sM</string>
+    <string name="nucleus_check_permission">请前往应用管理设置App权限</string>
+    <string name="nucleus_dialog_normal_title">提示</string>
+    <string name="nucleus_empty_view_title">暂无数据</string>
+    <string name="nucleus_error_view_title">发生了一些错误</string>
+    <string name="nucleus_error_view_btn">重试</string>
+    <string name="nucleus_loading">正在加载</string>
+    <string name="nucleus_permission_request_error">没有权限运行</string>
+    //网络解析
+    <string name="nucleus_network_netWork">网络连接失败</string>
+    <string name="nucleus_network_internal">程序内部错误</string>
+    <string name="nucleus_network_server">服务器错误</string>
+    <string name="nucleus_network_unKnow">未知错误</string>
+</resources>

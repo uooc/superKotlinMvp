@@ -1,0 +1,66 @@
+ext.mainApp = true
+apply from: '../cc.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion "$maxSdk_version".toInteger()
+    buildToolsVersion "$buildTools_version".toString()
+
+    defaultConfig {
+        if (project.ext.mainApp) {
+            applicationId "uooconline.com.skm"
+        }
+        minSdkVersion "$minSdk_version".toInteger()
+        targetSdkVersion "$maxSdk_version".toInteger()
+        versionCode 1
+        versionName "1.0"
+        if ("$android_studio_latest".toBoolean()) {
+            flavorDimensions "default"
+        }
+        multiDexEnabled true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    dataBinding {
+        enabled true
+    }
+    signingConfigs {
+        key {
+        }
+    }
+    //debug下是否开启混淆（提测时开启）
+    def useProguard = false
+    buildTypes {
+        debug {
+            versionNameSuffix "_DebugVersion"
+            ext.alwaysUpdateBuildId = false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'tinkerMultiDexKeep.pro'
+            minifyEnabled useProguard
+            zipAlignEnabled useProguard
+            shrinkResources useProguard
+            debuggable true
+        }
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'tinkerMultiDexKeep.pro'
+            minifyEnabled useProguard
+            zipAlignEnabled useProguard
+            shrinkResources useProguard
+            debuggable false
+        }
+    }
+}
+
+dependencies {
+    kapt "com.android.databinding:compiler:$android_plugin_version"
+    //resource
+    compile project(':nucleus')
+    //module
+    addComponent 'meizi'
+}
+apply from: 'sdk.gradle'

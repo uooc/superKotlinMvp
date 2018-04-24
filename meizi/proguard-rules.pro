@@ -1,0 +1,1 @@
+-keep class uooconline.com.meizi.request.model.** { *; }

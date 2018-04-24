@@ -1,0 +1,63 @@
+<!--
+  ~ Copyright (C) 2017 Ricky.yao https://github.com/vihuela
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="AppThemeBase" parent="QMUI.Compat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        //qmui，主题色
+        <item name="qmui_config_color_blue">@color/colorPrimary</item>
+        //qmui，titleBar
+        <item name="QMUITopBarStyle">@style/QDTopBar</item>
+        <item name="qmui_topbar_height">48dp</item>
+        <item name="qmui_topbar_title_color">@color/qmui_config_color_black</item>
+        <item name="qmui_topbar_subtitle_color">@color/qmui_config_color_gray_1</item>
+        <item name="qmui_topbar_text_btn_color_state_list">@color/nucleus_top_bar_btn</item>
+        //qmui,radiusImageView
+        <item name="QMUIRadiusImageViewStyle">@style/CustomerQMUIRadiusImageViewStyle</item>
+
+        <item name="app_primary_color">?attr/qmui_config_color_blue</item>
+        <item name="app_content_bg_color">@color/qmui_config_color_white</item>
+    </style>
+
+    <style name="CustomerQMUIRadiusImageViewStyle" parent="QMUI.RadiusImageView">
+        <item name="qmui_border_width">0px</item>
+    </style>
+
+    <style name="QDTopBar" parent="QMUI.TopBar">
+        <item name="qmui_topbar_bg_color">@color/E4</item>
+        <item name="qmui_topbar_separator_height">0px</item>
+    </style>
+
+    <style name="AppTheme" parent="AppThemeBase" />
+
+    <style name="Splash" parent="FullScreen">
+        <item name="android:background">@drawable/nucleus_splash_bg</item>
+    </style>
+
+    <style name="FullScreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="NoDisplay" parent="android:Theme.NoDisplay">
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <style name="Translucent" parent="AppThemeBase">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+</resources>

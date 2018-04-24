@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Ricky.yao https://github.com/vihuela
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <color name="colorPrimary">@color/A1</color>
+
+    <color name="A1">#0B99FF</color> <!-- 主题色：用于强调突出的文字、icon和按钮、入选中标签、重要跳转 -->
+    <color name="A2">#00c6fb</color> <!-- 主题色：逐渐变色1 用于icon 、banner、进度条 -->
+    <color name="A3">#3f9eff</color> <!-- 主题色：逐渐变色2 用于icon 、banner、进度条 -->
+
+    <color name="A4">#3300c6fb</color> <!-- 主题色：逐渐变色1 用于icon 、banner、进度条 -->
+
+    <color name="B1">#00c000</color> <!-- 辅助色：用于成功和通过的状态色、如选中成功、通过和完成的文字和icon -->
+    <color name="B2">#f2921d</color> <!-- 辅助色：用于当前和等待的状态色、如等待和当前状态的文字和icon -->
+    <color name="B3">#fe4141</color> <!-- 辅助色：用于失败和提示的状态色、如失败和完成状态的文字和icon -->
+
+    <color name="C1">#262626</color> <!-- 用于重要文本色如： 选标文字、按钮文字、选项文字 -->
+    <color name="C2">#696969</color> <!-- 用于普通文本色： 如详情文本、内容文本 -->
+    <color name="D3">#8e8e93</color> <!-- 用于弱文本色 ：如选项卡未选中文本、弱输入文本和弱标题状态文本 -->
+
+    <color name="E1">#d2d5d9</color> <!-- 用于内容分割线 -->
+    <color name="E2">#f2f3f5</color> <!-- 用于背景色 -->
+    <color name="E3">#f5f5f5</color> <!-- 用于文本输入框底色 -->
+    <color name="E4">#ffffff</color> <!-- 用于模块底色、反白文字 -->
+
+</resources>

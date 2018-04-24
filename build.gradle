@@ -1,0 +1,39 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.30'
+
+    //compatible as 3.0
+    ext.muldex_version = "$android_studio_latest".toBoolean() ? 'com.android.support:multidex:1.0.2' : 'com.android.support:multidex:1.0.1'
+    ext.gradle_version = "$android_studio_latest".toBoolean() ? 'com.android.tools.build:gradle:3.0.1' : 'com.android.tools.build:gradle:2.3.3'
+    //muldex compile optimization
+    ext.minSdk_version = "$dev_envirment".toBoolean() ? "$devMinSdk_version" as int : "$minSdk_version" as int
+    //hotfix
+    ext.hotfix = "$hotfix".toBoolean()
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath rootProject.ext.gradle_version
+        classpath "com.mcxiaoke.packer-ng:plugin:$ng_packer_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.billy.android:autoregister:1.2.0'
+        if (rootProject.ext.hotfix) classpath 'com.tencent.bugly:tinker-support:latest.release'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
