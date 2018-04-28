@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Ricky.yao https://github.com/vihuela
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  -->
+
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_mood"
+            android:layout_width="match_parent"
+            android:layout_height="140dp" />
+
+        <TextView
+            android:id="@+id/tv_photographer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_mood"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/C2"
+            android:textSize="@dimen/T5_1"
+            android:text="攝影| Ivana Cajina"/>
+        <TextView
+            android:id="@+id/tv_mood"
+            android:layout_below="@+id/tv_photographer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="28dp"
+            android:padding="10dp"
+            android:textSize="@dimen/T5_1"
+            android:text="由于我的无知，我对生存方式只有一个非常普通的信条：不许后悔。"/>
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_mood"
+            android:gravity="center"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="30dp"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/C2"
+            android:textSize="@dimen/T5_1"
+            android:text="龙的传人"/>
+
+        <RelativeLayout
+            android:layout_below="@+id/tv_author"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+            <TextView
+                android:id="@+id/tv_discovery"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="发现"
+                android:textColor="@color/D3"
+                android:gravity="center"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/discovery"/>
+            
+            <TextView
+                android:id="@+id/tv_favour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:text="1985"
+                android:textColor="@color/C2"
+                android:textSize="@dimen/T5_1"
+                android:paddingRight="12dp"
+                android:drawableLeft="@mipmap/feeds_laud_default"
+                android:gravity="right|top"/>
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="12dp"
+                android:paddingLeft="12dp"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/tv_favour"
+                android:src="@mipmap/feeds_share"/>
+            <ImageView
+                android:id="@+id/iv_favour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="12dp"
+                android:paddingLeft="12dp"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/iv_share"
+                android:src="@mipmap/favourite_gray"/>
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="12dp"
+                android:paddingLeft="12dp"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/iv_favour"
+                android:src="@mipmap/diary_icon"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

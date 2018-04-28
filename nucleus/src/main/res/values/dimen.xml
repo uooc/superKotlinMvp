@@ -11,4 +11,12 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
     <dimen name="grid_expected_size" >120dp</dimen>
+    <dimen name="T1">17sp</dimen> <!-- 加粗：用于导航栏标题文字、强调作用 -->
+    <dimen name="T2">17sp</dimen> <!-- 一般：用于详情标题文字、文字按钮 -->
+    <dimen name="T3_1">15sp</dimen> <!-- 加粗：用于模块标题文字 -->
+    <dimen name="T3">14sp</dimen> <!-- 加粗：用于模块标题文字 -->
+    <dimen name="T4">14sp</dimen> <!-- 一般：用于次标题、内容文本、切换选项文字 -->
+    <dimen name="T5">12sp</dimen> <!-- 一般  用于弱文本、状态文本、注释文本 -->
+    <dimen name="T5_1">11sp</dimen> <!-- 一般  用于弱文本、状态文本、注释文本 -->
+    <dimen name="T6">10sp</dimen> <!-- 一般：用于标签内文字 -->
 </resources>

@@ -24,7 +24,7 @@ class UoocTransformer<T> : ObservableTransformer<T, T> {
             //normal
                 is BaseRequest<*> -> {
                     val b = it as BaseRequest<*>
-                    if (b.code == 1) {
+                    if (b.res == 0) {
                         Observable.just(it)
                     } else {
                         handleError(b)
@@ -33,7 +33,7 @@ class UoocTransformer<T> : ObservableTransformer<T, T> {
             //rxCache
                 is Reply<*> -> {
                     val b = (it as Reply<*>).data as BaseRequest<*>
-                    if (b.code == 1) {
+                    if (b.res == 0) {
                         Observable.just(it)
                     } else {
                         handleError(b)
@@ -48,14 +48,14 @@ class UoocTransformer<T> : ObservableTransformer<T, T> {
     }
 
     private fun handleError(b: BaseRequest<*>): Observable<Any?>? {
-        sendEvent(Event.obtain(when (b.code) {
+        sendEvent(Event.obtain(when (b.res) {
             420 -> ACCOUNT_CONFILICT//冲突
             401 -> ACCOUNT_UNLOGIN//未登录
             103 -> CERTIFI_UN_AUTH//未认证
             104 -> CERTIFI_AUTHING//正在认证中
             else -> -1
         }, b.msg))
-        return Observable.error(UoocBusinessException(b.msg, b.code))
+        return Observable.error(UoocBusinessException(b.msg, b.res))
     }
 
 }

@@ -13,6 +13,8 @@ package uooconline.com.teacher.request
 
 import io.reactivex.Observable
 import io.rx_cache2.*
+import retrofit2.http.GET
+import retrofit2.http.Query
 import uooconline.com.nucleus.retrofit.ApiUtils
 import uooconline.com.teacher.request.model.TextItem
 import java.util.concurrent.TimeUnit
@@ -25,5 +27,13 @@ interface ApiCache {
 
     @LifeCache(duration = 7, timeUnit = TimeUnit.DAYS)
     fun getTexts(resObservable: Observable<List<TextItem>>, evictProvider: EvictProvider = EvictProvider(NO_CACHE)): Observable<Reply<List<TextItem>>>
+
+
+    @LifeCache(duration = 7, timeUnit = TimeUnit.DAYS)
+    fun idlist(resObservable: Observable<OneIdlist>, evictProvider: EvictProvider = EvictProvider(NO_CACHE)): Observable<Reply<OneIdlist>>
+
+    @LifeCache(duration = 7, timeUnit = TimeUnit.DAYS)
+    fun onelisthome(resObservable: Observable<OneList>, evictProvider: EvictProvider = EvictProvider(NO_CACHE)): Observable<Reply<OneList>>
+
 
 }

@@ -106,12 +106,12 @@ object ApiUtils {
                 //header
                 this.addInterceptor { chain ->
                     chain.proceed(chain.request().newBuilder()
-                            .addHeader("xgTokenFlag", xgTokenFlag)//推送标识（推送）
-                            .addHeader("versionFlag", "${versionFlag}")//版本标识（更新）
-                            .addHeader("machineFlag", machineFlag)//设备标识（互斥登录）
-                            .addHeader("productFlag", productFlag)//机器型号
-                            .addHeader("sourceFlag", sourceFlag)//来源标识（Android ios）
-                            .addHeader("Authorization", "Bearer ${userFlag}")//用户验证token(操作)
+//                            .addHeader("xgTokenFlag", xgTokenFlag)//推送标识（推送）
+//                            .addHeader("versionFlag", "${versionFlag}")//版本标识（更新）
+//                            .addHeader("machineFlag", machineFlag)//设备标识（互斥登录）
+//                            .addHeader("productFlag", productFlag)//机器型号
+//                            .addHeader("sourceFlag", sourceFlag)//来源标识（Android ios）
+//                            .addHeader("Authorization", "Bearer ${userFlag}")//用户验证token(操作)
                             .build())
                 }
                 //log

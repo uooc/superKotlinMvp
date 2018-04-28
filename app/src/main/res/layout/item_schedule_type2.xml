@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Ricky.yao https://github.com/vihuela
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  -->
+
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/E2"/>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_mood"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/C2"
+            android:textSize="@dimen/T5_1"
+            android:text="- ONE STORY -"/>
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_below="@+id/tv_photographer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/T3"
+            android:text="临时打劫"/>
+        <TextView
+            android:id="@+id/tv_photographer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_mood"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:layout_marginLeft="18dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/C2"
+            android:textSize="@dimen/T5_1"
+            android:text="文 / 爱丽诗"/>
+
+        <ImageView
+            android:id="@+id/iv_mood"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_height="165dp" />
+        <TextView
+            android:id="@+id/tv_mood"
+            android:layout_below="@+id/tv_photographer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:textColor="@color/C2"
+            android:textSize="@dimen/T5_1"
+            android:text="临时打劫"/>
+
+        <RelativeLayout
+            android:layout_below="@+id/tv_author"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+            <TextView
+                android:id="@+id/tv_discovery"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="18dp"
+                android:paddingRight="12dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="今天"
+                android:textColor="@color/D3"
+                android:textSize="@dimen/T5_1"
+                android:gravity="center"/>
+            
+            <TextView
+                android:id="@+id/tv_favour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1985"
+                android:textColor="@color/C2"
+                android:textSize="@dimen/T5_1"
+                android:layout_marginRight="5dp"
+                android:paddingRight="12dp"
+                android:layout_toLeftOf="@+id/iv_share"
+                android:drawableLeft="@mipmap/feeds_laud_default"
+                android:gravity="right|top"/>
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="18dp"
+                android:paddingLeft="18dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/feeds_share"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/E2"/>
+    </LinearLayout>
+</layout>

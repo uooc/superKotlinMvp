@@ -25,7 +25,7 @@ const val ACCOUNT_CONFILICT = 0xff1
 const val CERTIFI_UN_AUTH = 0xff2
 const val ACCOUNT_UNLOGIN = 0xff3
 const val CERTIFI_AUTHING = 0xff4
-
+const val REFRESH_WEBVIEW = 0xff5
 class Constant {
 
     object App {

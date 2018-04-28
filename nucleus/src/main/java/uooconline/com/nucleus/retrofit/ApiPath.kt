@@ -25,21 +25,6 @@ object ApiPath {
     }
 
     fun getApiPath(envir: String = currentEnvir): String =
-            when (envir) {
-                Internal -> "http://192.168.1.210"
-                Test -> "http://test.uooconline.com"
-                Beta -> "http://beta.uooconline.com"
-                Formal -> "http://www.uooconline.com"
-                else -> "http://www.uooconline.com"
-            }
-
-    fun getDocPath(): String =
-            when (currentEnvir) {
-                Internal -> "http://192.168.1.210:8087"
-                Test -> "http://doc-test.uooconline.com"
-                Beta -> "http://doc-beta.uooconline.com"
-                Formal -> "http://doc.uooconline.com"
-                else -> "http://doc.uooconline.com"
-            }
+            "http://v3.wufazhuce.com:8000"
 
 }
