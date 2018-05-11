@@ -16,7 +16,10 @@ import uooconline.com.nucleus.widget.InterceptViewpager
 import uooconline.com.teacher.R
 import uooconline.com.teacher.request.Api
 import uooconline.com.teacher.request.ApiCache
+import uooconline.com.teacher.ui.fragment.AllTypeFragment
+import uooconline.com.teacher.ui.fragment.MeFragment
 import uooconline.com.teacher.ui.fragment.OneFragment
+import uooconline.com.teacher.ui.view.IChangeStateColor
 import uooconline.com.teacher.ui.view.IMainActivity
 
 class MainActivityPresenter : BasePresenter<IMainActivity>() {
@@ -39,10 +42,10 @@ class MainActivityPresenter : BasePresenter<IMainActivity>() {
 
     private fun tab4() {
         //pager
-        val fs = arrayListOf(OneFragment(), OneFragment(), OneFragment())
+        val fs = arrayListOf(OneFragment(), AllTypeFragment(), MeFragment())
         with(mPager ?: return) {
             mPager?.adapter = object : FragmentPagerAdapter(mSupportFragmentManager!!) {
-                override fun getItem(position: Int): Fragment = fs[position]
+                override fun getItem(position: Int): Fragment = fs[position] as Fragment
                 override fun getCount(): Int = fs.size
             }
             offscreenPageLimit = 3
@@ -54,6 +57,7 @@ class MainActivityPresenter : BasePresenter<IMainActivity>() {
                 }
 
                 override fun onPageSelected(position: Int) {
+                    changeFragmentStateColor(fs, position)
                 }
             })
         }
@@ -65,27 +69,26 @@ class MainActivityPresenter : BasePresenter<IMainActivity>() {
             setDefaultSelectedColor(selectColor)
             reset()
             //ONE
-            val schedule = QMUITabSegment.Tab(
+            val one = QMUITabSegment.Tab(
                     ContextCompat.getDrawable(context, R.mipmap.one_line),
                     ContextCompat.getDrawable(context, R.mipmap.one_fill),
                     "ONE", false
             )
             //ALL
-            val micro = QMUITabSegment.Tab(
+            val all = QMUITabSegment.Tab(
                     ContextCompat.getDrawable(context, R.mipmap.all_line),
                     ContextCompat.getDrawable(context, R.mipmap.all_fill),
                    "ALL", false
             )
             //ME
-            val found = QMUITabSegment.Tab(
+            val me = QMUITabSegment.Tab(
                     ContextCompat.getDrawable(context, R.mipmap.me_line),
                     ContextCompat.getDrawable(context, R.mipmap.me_fill),
                     "ME", false
             )
-            addTab(schedule)
-            addTab(micro)
-            addTab(found)
-
+            addTab(one)
+            addTab(all)
+            addTab(me)
             setOnTabClickListener { tabIndex ->
                 view().onClickDealWithData(tabIndex)
             }
@@ -93,5 +96,15 @@ class MainActivityPresenter : BasePresenter<IMainActivity>() {
         }
         mBottomTab?.setupWithViewPager(mPager, false, false)
     }
+
+    //状态栏颜色
+    private fun changeFragmentStateColor(fs: ArrayList<*>, tabIndex: Int) {
+        fs.forEachIndexed { fsIndex, it ->
+            if (tabIndex == fsIndex) {
+                (it as? IChangeStateColor)?.onChangeStateColor()
+            }
+        }
+    }
+
 
 }

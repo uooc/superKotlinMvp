@@ -6,15 +6,7 @@ import uooconline.com.teacher.request.Bymonth
 import uooconline.com.teacher.request.OneIdlist
 import uooconline.com.teacher.request.OneList
 
-interface IOneFragment : IView {
-    /**
-     * 获取最新 idlist
-     */
-    fun obtainIdList(ids: List<String>?) = Unit
-
-    fun setMessage(content: String)= Unit
-
-    fun obtainOneList(content: OneList.Data?)= Unit
+interface IAllFragment : IView {
     fun obtainBymonth(content: Bymonth.Data?)= Unit
 
     fun obtainTitle(title:String,subtitle:String) = Unit

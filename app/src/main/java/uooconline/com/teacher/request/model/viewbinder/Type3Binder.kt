@@ -1,6 +1,9 @@
 package uooconline.com.education.model.schedule.viewbinder
 
+import android.text.TextUtils
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import uooconline.com.nucleus.widget.treelist.TreeNode
 import uooconline.com.nucleus.widget.treelist.TreeViewBinder
 import uooconline.com.teacher.R
@@ -14,12 +17,29 @@ class Type3Binder() : TreeViewBinder<Type3Binder.ViewHolder>() {
 
     override fun bindView(holder: ViewHolder, position: Int, node: TreeNode<*>) {
         val item = node.content as Type3
-//        holder.mTitle.text = item.title
+        var typeName = ""
+        when(item.contain.content_type){
+            "1"->{
+                typeName = if(item.contain.tag != null &&!TextUtils.isEmpty(item.contain.tag.title)){
+                    item.contain.tag.title!!
+                }else{
+                    "阅读"
+                }
+            }
+            "2"-> typeName = "連載"
+            "3"-> typeName = "問答"
+            "4"-> typeName = "音乐"
+            "5"-> typeName = "影视"
+            "8"-> typeName = "電台"
+
+        }
+        holder.tv_tips.text = typeName
+        holder.tv_contian.text = item.contain.title
     }
 
     class ViewHolder(rootView: View) : TreeViewBinder.ViewHolder(rootView) {
-//        val mTitle: TextView = rootView.findViewById(R.id.title)
-//        val mArrow: ImageView = rootView.findViewById(R.id.arrow_pic)
+        val tv_tips: TextView = rootView.findViewById(R.id.tv_tips)
+        val tv_contian: TextView = rootView.findViewById(R.id.tv_contian)
 
     }
 

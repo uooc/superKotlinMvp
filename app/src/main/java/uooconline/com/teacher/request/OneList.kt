@@ -26,13 +26,13 @@ data class X(
     val content_type: String,
     val content_id: String,
     val title: String,
-    val tag: Tag,
+    val tag: Tag?,
     val serial_list: List<String>
 )
 
 data class Tag(
     val id: String,
-    val title: String
+    val title: String?
 )
 
 data class Weather(
@@ -41,7 +41,7 @@ data class Weather(
     val temperature: String,
     val humidity: String,
     val climate: String,
-    val wind_direction: String,
+//    val wind_direction: String,
     val hurricane: String,
     val icons: Icons
 )
@@ -90,7 +90,7 @@ data class Content(
     val share_url: String,
     val share_info: ShareInfo,
     val share_list: ShareList,
-    val tag_list: List<Any>,
+    val tag_list: List<OneTag>?,
     val orientation: String,
     val answerer: Answerer,
     val music_name: String,
@@ -100,6 +100,10 @@ data class Content(
     val bg_color: String
 )
 
+data class OneTag(
+    val id:String?,
+    val title: String?
+)
 data class ShareList(
     val wx: Wx,
     val wx_timeline: WxTimeline,

@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/iv_mood"
             android:layout_width="match_parent"
-            android:layout_height="140dp" />
+            android:layout_height="230dp" />
 
         <TextView
             android:id="@+id/tv_photographer"
@@ -28,7 +28,7 @@
             android:padding="10dp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/C2"
-            android:textSize="@dimen/T5_1"
+            android:textSize="@dimen/T5"
             android:text="攝影| Ivana Cajina"/>
         <TextView
             android:id="@+id/tv_mood"
@@ -39,7 +39,7 @@
             android:layout_marginTop="18dp"
             android:layout_marginRight="28dp"
             android:padding="10dp"
-            android:textSize="@dimen/T5_1"
+            android:textSize="@dimen/T4"
             android:text="由于我的无知，我对生存方式只有一个非常普通的信条：不许后悔。"/>
         <TextView
             android:id="@+id/tv_author"
@@ -52,7 +52,7 @@
             android:padding="10dp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/C2"
-            android:textSize="@dimen/T5_1"
+            android:textSize="@dimen/T5"
             android:text="龙的传人"/>
 
         <RelativeLayout
@@ -62,7 +62,7 @@
             <TextView
                 android:id="@+id/tv_discovery"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:layout_alignParentLeft="true"
@@ -88,28 +88,31 @@
             <ImageView
                 android:id="@+id/iv_share"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingRight="12dp"
                 android:paddingLeft="12dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="12dp"
+                android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/tv_favour"
                 android:src="@mipmap/feeds_share"/>
             <ImageView
                 android:id="@+id/iv_favour"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:paddingRight="12dp"
                 android:paddingLeft="12dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="12dp"
                 android:layout_toLeftOf="@+id/iv_share"
                 android:src="@mipmap/favourite_gray"/>
             <ImageView
                 android:id="@+id/iv_edit"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:paddingRight="12dp"
                 android:paddingLeft="12dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="12dp"
                 android:layout_toLeftOf="@+id/iv_favour"
                 android:src="@mipmap/diary_icon"/>
         </RelativeLayout>

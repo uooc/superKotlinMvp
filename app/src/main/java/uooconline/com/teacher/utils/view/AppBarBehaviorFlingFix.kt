@@ -20,7 +20,7 @@ class AppBarBehaviorFlingFix(context: Context?, attrs: AttributeSet?) : AppBarLa
         nestView = target as? RecyclerView
         if (nestView != null && swipeDownTrigger == null) {
             swipeDownTrigger = object : AppBarStateChangeListener() {
-                override fun onStateChanged(appBarLayout: AppBarLayout, state: State) {
+                override fun onStateChanged(appBarLayout: AppBarLayout, state: State,int: Float) {
                     when (state) {
                         State.EXPANDED -> {
                             nestView?.isNestedScrollingEnabled = false//结束惯性：立刻触发 onStopNestedScroll

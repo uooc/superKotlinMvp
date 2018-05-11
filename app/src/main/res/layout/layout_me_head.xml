@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Ricky.yao https://github.com/vihuela
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  -->
+
+<layout>
+
+    <!--<data>-->
+
+        <!--<variable-->
+            <!--name="item"-->
+            <!--type="uooconline.com.education.model.MainMenuItem" />-->
+
+        <!--<import type="android.view.View" />-->
+    <!--</data>-->
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/layout_head"
+        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:ignore="all">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:contentDescription="#@#"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/default_indi_bg"
+            />
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/iv_head"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:clickable="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
+            app:qmui_border_width="0dp"
+            app:qmui_selected_mask_color="?attr/qmui_config_color_pressed"
+            android:src="@mipmap/opening_saturday" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_head"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/T2"
+            android:layout_marginTop="10dp"
+            android:text="Gen哥哥"/>
+    </RelativeLayout>
+</layout>

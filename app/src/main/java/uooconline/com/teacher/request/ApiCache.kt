@@ -16,6 +16,7 @@ import io.rx_cache2.*
 import retrofit2.http.GET
 import retrofit2.http.Query
 import uooconline.com.nucleus.retrofit.ApiUtils
+import uooconline.com.nucleus.retrofit.request.BaseRequest
 import uooconline.com.teacher.request.model.TextItem
 import java.util.concurrent.TimeUnit
 
@@ -34,6 +35,9 @@ interface ApiCache {
 
     @LifeCache(duration = 7, timeUnit = TimeUnit.DAYS)
     fun onelisthome(resObservable: Observable<OneList>, evictProvider: EvictProvider = EvictProvider(NO_CACHE)): Observable<Reply<OneList>>
+
+    @LifeCache(duration = 7, timeUnit = TimeUnit.DAYS)
+    fun allList(resObservable: Observable<AllList>, url: DynamicKey, evictDynamicKey: EvictDynamicKey): Observable<Reply<AllList>>
 
 
 }

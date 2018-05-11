@@ -7,6 +7,7 @@ import com.blankj.utilcode.util.DeviceUtils
 import com.blankj.utilcode.util.TimeUtils
 import com.ricky.mvp_core.base.BasePresenter
 import com.ricky.mvp_core.base.interfaces.IView
+import io.reactivex.android.schedulers.AndroidSchedulers
 import org.jetbrains.anko.collections.forEachByIndex
 import uooconline.com.nucleus.utils.ext.defPolicy
 import uooconline.com.nucleus.utils.ext.parse
@@ -31,6 +32,8 @@ import java.util.concurrent.CopyOnWriteArrayList
 class OneFragmentPresenter: BasePresenter<IOneFragment>() {
 
     var mUUID = "00000000-1524-4a51-a999-8a9f486e1e63"
+    var mTitle:String?=""
+    var mSuberTitle:String?=""
 
     override fun onViewCreated(view: IOneFragment, arguments: Bundle?, savedInstanceState: Bundle?) {
     }
@@ -50,7 +53,7 @@ class OneFragmentPresenter: BasePresenter<IOneFragment>() {
         if(TextUtils.isEmpty(date))
             return
         source.clear()
-        ApiCache.IMPL.onelisthome(Api.IMPL.onelisthome(date!!,mUUID))
+        ApiCache.IMPL.onelisthome(Api.IMPL.onelisthome(date!!,"深圳",mUUID))
                 .defPolicy(this)
                 .map {
                     if(it.data?.data?.content_list != null && it.data?.data?.content_list?.size!! > 0){
@@ -71,13 +74,22 @@ class OneFragmentPresenter: BasePresenter<IOneFragment>() {
                             }
                         }
                     }
+                    val weater = it.data?.data?.weather
+                    mTitle = weater?.city_name + "."+weater?.climate+" "+weater?.temperature+"°C"
+                   mSuberTitle = it.data?.data?.date
+//                    if(!TextUtils.isEmpty(date)){
+//                        val l = date?.split(" ")
+//                        val m = l?.get(0)?.split("-")
+//                    }
                     source
                 }.map {
                     expandAllItem(it)
                     source
                 }
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     success.invoke(source)
+                    view().obtainTitle(mTitle?:"",mSuberTitle?:"")
                 }, {
                     failure.invoke()
                     it.parse({ _, message -> view().setMessage( message) })

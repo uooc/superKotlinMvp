@@ -13,8 +13,10 @@ package uooconline.com.teacher.request
 
 import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 import uooconline.com.nucleus.retrofit.ApiUtils
+import uooconline.com.nucleus.retrofit.request.BaseRequest
 import uooconline.com.teacher.request.model.TextItem
 
 
@@ -61,17 +63,30 @@ interface Api {
      * @param date yyyy-MM-dd
      */
     @GET("/hp/bymonth/{date}%2000:00:00")
-    fun bymonth(@Query("date") id: String,
+    fun bymonth(@Path("date") id: String,
                 @Query("uuid") uuid: String,
                 @Query("channel") channel: String = "mi",
                 @Query("version") version: String = "4.0.2",
                 @Query("platform") platform: String = "android"): Observable<Bymonth>
+
+
     //http://v3.wufazhuce.com:8000/api/channel/one/0/深圳?channel=mi&sign=b0070db1a6072d597b6cfa3154edb26a&version=4.5.3&uuid=00000000-1524-4a51-a999-8a9f486e1e63&platform=android
     @GET("/api/channel/one/{date}/{location}")
-    fun onelisthome(@Query("date") date: String,
+    fun onelisthome(@Path("date") date: String,
+                    @Path("location") location: String="深圳",
                     @Query("uuid") uuid: String,
-                @Query("date") location: String="深圳",
                 @Query("channel") channel: String = "mi",
                 @Query("version") version: String = "4.0.2",
                 @Query("platform") platform: String = "android"): Observable<OneList>
+
+
+    //GET /api/banner/list/3?channel=mi&sign=b0070db1a6072d597b6cfa3154edb26a&version=4.5.3&uuid=00000000-1524-4a51-a999-8a9f486e1e63&platform=android
+    @GET("/api/banner/list/{type}")
+    fun allList(@Path("type") type: String,
+                @Query("uuid") uuid: String,
+                @Query("sign") location: String="b0070db1a6072d597b6cfa3154edb26a",
+                @Query("channel") channel: String = "mi",
+                @Query("version") version: String = "4.0.2",
+                @Query("platform") platform: String = "android"): Observable<AllList>
+
 }

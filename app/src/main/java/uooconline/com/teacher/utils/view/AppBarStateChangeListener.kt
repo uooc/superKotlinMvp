@@ -15,6 +15,7 @@ abstract class AppBarStateChangeListener : AppBarLayout.OnOffsetChangedListener 
     }
 
     final override fun onOffsetChanged(appBarLayout: AppBarLayout, i: Int) {
+//        LogUtils.d(i.toString())
         when {
             i == 0 -> {
                 if (mCurrentState != State.EXPANDED) {
@@ -29,13 +30,15 @@ abstract class AppBarStateChangeListener : AppBarLayout.OnOffsetChangedListener 
                 mCurrentState = State.COLLAPSED
             }
             else -> {
-                if (mCurrentState != State.IDLE) {
-                    onStateChanged(appBarLayout, State.IDLE)
-                }
+//                if (mCurrentState != State.IDLE) {
+                val alphaTranslate :Float= (Math.abs(i).toFloat())/Math.abs(appBarLayout.totalScrollRange)
+                onStateChanged(appBarLayout, State.IDLE,alphaTranslate)
+                onStateChanged(appBarLayout, State.IDLE)
+//                }
                 mCurrentState = State.IDLE
             }
         }
     }
 
-    abstract fun onStateChanged(appBarLayout: AppBarLayout, state: State)
+    abstract fun onStateChanged(appBarLayout: AppBarLayout, state: State,i: Float=0f)
 }
