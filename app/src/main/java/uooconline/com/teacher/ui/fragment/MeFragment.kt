@@ -3,11 +3,14 @@ package uooconline.com.teacher.ui.fragment
 import android.graphics.Color
 import android.support.design.widget.AppBarLayout
 import kotlinx.android.synthetic.main.fragment_me.*
+import kotlinx.android.synthetic.main.layout_me_head.*
 import uooconline.com.education.utils.view.AppBarStateChangeListener
+import uooconline.com.nucleus.resource.Constant
 import uooconline.com.nucleus.ui.base.BaseFragment
 import uooconline.com.nucleus.utils.ext.applyStatusBarBlack
 import uooconline.com.nucleus.utils.ext.applyStatusBarWhite
 import uooconline.com.nucleus.utils.ext.applyStatusMargin
+import uooconline.com.nucleus.utils.router.routerActivity
 import uooconline.com.teacher.R
 import uooconline.com.teacher.databinding.FragmentOneBinding
 import uooconline.com.teacher.presenter.MeFragmentPresenter
@@ -70,6 +73,10 @@ class MeFragment:BaseFragment<MeFragmentPresenter,FragmentOneBinding>(), IMeFrag
             }
         }
         mAppbarLayout.addOnOffsetChangedListener(appBarListener)
+
+        iv_head.setOnClickListener {
+            activity?.routerActivity(Constant.Meizi.Meizi,Constant.Meizi.MainActivity)
+        }
 
     }
 

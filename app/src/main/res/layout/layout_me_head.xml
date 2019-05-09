@@ -59,6 +59,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/T2"
             android:layout_marginTop="10dp"
-            android:text="Gen哥哥"/>
+            android:text="Yao哥哥"/>
     </RelativeLayout>
 </layout>
